@@ -34,6 +34,29 @@ $scope.cardSwiped = function(index) {
   $scope.cards.push(newCard);
 };
 ```
+With added support for directional swipe control
+
+```html
+<td-cards>
+  <td-card ng-repeat="card in cards" directions="left-up" on-swiped="cardSwiped($index, direction)">
+    Will Only Support Left And Up Swipes
+  </td-card>
+</td-cards>
+```
+on-swipe returns a direction: "left", "right", "up","down"
+```javascript
+
+$scope.cardSwiped = function(index, direction) {
+ 	switch(direction){
+ 		case 'left': doSomething();
+ 		break;
+ 		case 'up': doSomething();
+ 		...
+ 		}
+
+};
+```
+
 
 
 
