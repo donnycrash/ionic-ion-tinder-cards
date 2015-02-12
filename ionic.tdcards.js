@@ -130,21 +130,21 @@
         isUnderThreshold: function() {
             //return true;
             if (this.directions.indexOf('left') > -1 && this.directions.indexOf('right') > -1) {
-                return Math.abs(this.thresholdAmount) < 0.4;
+                return Math.abs(this.thresholdAmount) < 0.8;
             } else if (this.directions.indexOf('left') > -1) {
-                return this.thresholdAmount > -0.4;
+                return this.thresholdAmount > -0.8;
             } else {
-                return this.thresholdAmount < 0.4;
+                return this.thresholdAmount < 0.8;
             }
         },
         isUnderYThreshold: function() {
             //return true;
             if (this.directions.indexOf('up') > -1 && this.directions.indexOf('down') > -1) {
-                return Math.abs(this.thresholdAmountY) < 0.4;
+                return Math.abs(this.thresholdAmountY) < 0.8;
             } else if (this.directions.indexOf('up') > -1) {
-                return this.thresholdAmountY > -0.4;
+                return this.thresholdAmountY > -0.8;
             } else {
-                return this.thresholdAmountY < 0.4;
+                return this.thresholdAmountY < 0.8;
             }
 
         },
@@ -271,8 +271,8 @@
             var o = e.gesture.deltaX / -1000;
             this.rotationAngle = Math.atan(o);
 
-            this.x = this.startX + (e.gesture.deltaX * 0.4);
-            this.y = this.startY + (e.gesture.deltaY * 0.4);
+            this.x = this.startX + (e.gesture.deltaX * 0.8);
+            this.y = this.startY + (e.gesture.deltaY * 0.8);
             this.el.style.transform = this.el.style.webkitTransform = 'translate3d(' + this.x + 'px, ' + this.y + 'px, 0) rotate(' + (this.rotationAngle || 0) + 'rad)';
 
             this.thresholdAmount = (this.x / (this.parentWidth / 2));
