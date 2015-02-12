@@ -43,14 +43,15 @@ With added support for directional swipe control
   </td-card>
 </td-cards>
 ```
-on-swipe returns a direction: "left", "right", "up","down"
+'on-swiped' returns a direction: "left", "right", "up","down" for cases you would like 
+to handle in one function: 
 ```javascript
 
 $scope.cardSwiped = function(index, direction) {
  	switch(direction){
  		case 'left': doSomething();
  		break;
- 		case 'up': doSomething();
+ 		case 'up': doSomethingElse();
  		...
  		}
 
